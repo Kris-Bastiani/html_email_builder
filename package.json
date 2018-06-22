@@ -1,0 +1,21 @@
+{
+  "author": "Kris Bastiani",
+  "name": "html_email_builder",
+  "description": "Tool for building HTML emails using GulpJS",
+  "main": "gulpfile.js",
+  "license": "ISC",
+  "private": false,
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-inline-css": "^3.3.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.1",
+    "jstransformer-scss": "^1.0.0",
+    "pump": "^3.0.0",
+    "through2": "^2.0.3",
+    "yargs": "^11.0.0"
+  }
+}
