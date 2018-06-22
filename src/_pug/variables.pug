@@ -1,0 +1,25 @@
+-
+	const $ = {
+		bodyTableClasses: '',
+		img: {
+			path: 'img/',
+			spacer: 'img/spacer.gif',
+		},
+		preheader: '',
+		subject: '',
+		w: {
+			total: 640,
+			gutter: 20,
+			gutterBetween: 20,
+			colFirst: 90,
+		},
+	}
+
+block variables
+
+-
+	$.w.content = $.w.total - $.w.gutter * 2
+	$.w.extra = $.w.total + $.w.gutter * 2
+	$.w.half = ($.w.total - $.w.gutter * 2 - $.w.gutterBetween) / 2
+	$.w.third = ($.w.total - $.w.gutter * 2 - $.w.gutterBetween * 2) / 3
+	$.w.colSecond = $.w.content - ($.w.colFirst + $.w.gutterBetween * 2)
