@@ -1,0 +1,9 @@
+head
+	meta(charset='utf-8' content='text/html' http-equiv='Content-Type')
+	meta(content='width=device-width, initial-scale=1.0', name='viewport')
+	title #{$.subject}
+	meta(content=$.preheader name='description')
+	if !noInline
+		link(href='inline.css' rel='stylesheet')
+	style
+		block styles
