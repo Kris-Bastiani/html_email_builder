@@ -1,0 +1,5 @@
+$w__content: $w__total - $w__gutter * 2;
+$w__extra: $w__total + $w__gutter * 2;
+$w__half: ($w__total - $w__gutter * 2 - $w__gutter_between) / 2;
+$w__third: ($w__total - $w__gutter * 2 - $w__gutter_between * 2) / 3;
+$w__col_second: $w__content - ($w__col_first + $w__gutter_between * 2);

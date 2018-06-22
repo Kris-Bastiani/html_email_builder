@@ -1,0 +1,44 @@
+@media yahoo {
+	// Force centering in Yahoo mail
+	.wrapperTable {
+		& > tbody {
+			& > tr {
+				& > td {
+					display: block;
+					float: none;
+					margin: 0 auto;
+					max-width: #{$w__total}px;
+				}
+			}
+		}
+	}
+}
+
+@media only screen {
+	// Outlook 07/10/13 Padding issue fix
+	table {
+		td {
+			border-collapse: collapse;
+		}
+	}
+
+	// Fix appearance of links automatically created by iOS
+	// NOTE: iOS will ignore solid black on links, hence the use of $clr__pseudo_black
+	a {
+		&[href^="x-apple-data-detectors"],
+		&[href^="tel"],
+		&[href^="sms"] {
+			text-decoration: none;
+			color: $clr__pseudo_black;
+			pointer-events: none;
+			cursor: default;
+		}
+	}
+}
+
+@media only screen and (max-width: #{$w__total}px) {
+	// Gmail ignores media queries, so this stops .fix_gmail from ruining responsive behaviour
+	.fix_gmail {
+		min-width: inherit !important;
+	}
+}

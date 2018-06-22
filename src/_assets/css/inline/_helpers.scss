@@ -1,0 +1,31 @@
+#preheader {
+	display: none !important;
+	visibility: hidden !important;
+	font-size: 1px !important;
+	line-height: 1px !important;
+}
+
+// <img> elements are display: inline by default, which results in extra space underneath
+.fix_img {
+	display: block;
+}
+
+.nobr {
+	white-space: nowrap;
+}
+
+.txt_center {
+	text-align: center;
+}
+
+.txt_left {
+	text-align: left;
+}
+
+.txt_right {
+	text-align: right;
+}
+
+.valign_middle {
+	vertical-align: middle;
+}

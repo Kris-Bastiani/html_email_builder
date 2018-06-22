@@ -1,0 +1,48 @@
+.container,
+.container_extra {
+	margin: 0 auto;
+	width: 100%;
+
+	& > div {
+		display: table;
+		table-layout: fixed;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	&.gutterless {
+		& > div {
+			max-width: 100%;
+		}
+	}
+}
+
+.container {
+	max-width: #{$w__total}px;
+
+	& > div {
+		max-width: #{($w__content + $w__gutter_between)}px;
+	}
+}
+
+.container_extra {
+	max-width: #{$w__extra}px;
+
+	& > div {
+		max-width: #{($w__total + $w__gutter_between)}px;
+	}
+}
+
+.column {
+	display: table-cell;
+	padding: 0 #{$w__gutter_between / 2}px;
+	vertical-align: top;
+
+	&.col1 {
+		width: #{$w__col_first}px;
+	}
+
+	&.col2 {
+		width: #{$w__col_second}px;
+	}
+}

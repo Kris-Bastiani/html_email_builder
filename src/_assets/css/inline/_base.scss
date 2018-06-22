@@ -1,0 +1,93 @@
+a {
+	img {
+		border: none;
+	}
+
+	&.no_underline {
+		text-decoration: none !important;
+	}
+}
+
+body {
+	width: 100% !important;
+	// Prevent text smaller than 13px from automatically scaling up in some clients
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+img {
+	outline: none;
+	text-decoration: none;
+	// Fix image quality when scaled in IE
+	-ms-interpolation-mode: bicubic;
+}
+
+// Yahoo paragraph fix
+// NOTE: it is advisable to avoid <p> elements as margins are unreliable in email
+p {
+	margin: 0;
+	margin-bottom: 1em;
+}
+
+sup {
+	line-height: 0;
+}
+
+// Prevent extra space added around <table> and <td> elements by some clients
+table,
+td {
+	border-collapse: collapse;
+}
+
+// Minimise extra space around <table> elements added by Outlook 07/10/13
+table {
+	mso-table-lspace: 0pt;
+	mso-table-rspace: 0pt;
+}
+
+// Styles for fallback when Gmail strips <body> element
+#body_table {
+	margin: 0;
+	padding: 0;
+	width: 100% !important;
+	line-height: 100% !important;
+}
+
+// Force Outlook 07/10/13 to provide a "view in browser" menu link
+#outlook a {
+	padding: 0;
+}
+
+// Force Outlook.com/Hotmail to display emails at full width
+.ExternalClass {
+	width: 100%;
+
+	// Forces Outlook.com/Hotmail to display normal line spacing
+	div,
+	font,
+	p,
+	span,
+	td,
+	* {
+		line-height: 131%;
+	}
+}
+
+// Force Gmail App to scale email proportionally
+// Ensure at least one content-width <td> has the .fix_gmail class
+.fix_gmail {
+	min-width: #{$w__content}px;
+}
+
+.outlook2013 {
+	font-size: 1px;
+	line-height: 1px;
+}
