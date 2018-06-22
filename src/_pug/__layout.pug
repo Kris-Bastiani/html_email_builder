@@ -1,0 +1,9 @@
+include variables
+include helpers/table
+doctype strict
+html(xmlns='http://www.w3.org/1999/xhtml')
+	include modules/head
+	body
+		span#preheader $.preheader
+		+table(id='body_table' class=$.bodyTableClasses align='center' width='100%')
+			block body
