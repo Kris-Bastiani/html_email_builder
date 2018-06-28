@@ -1,0 +1,44 @@
+include ../helpers/table
+include ../helpers/tdGutter
+
+mixin oneColumn(options = {})
+	-
+		options.extraWide = options.extraWide || false
+		options.containerClasses = options.containerClasses || ''
+		options.innerClasses = options.innerClasses || ''
+		options.tdClasses = options.tdClasses || ''
+		options.wrapperClasses = options.wrapperClasses || ''
+
+	tr
+		td(align='center' class=`responsive ${options.wrapperClasses}` valign='top')
+			<!--[if !mso]><!-->
+			div(class=`container${options.extraWide ? '_extra' : ''} ${options.containerClasses}`)
+				.pseudo_table
+					<!-- <![endif]-->
+					// startMSO
+					+table(
+						class=`responsive ${options.containerClasses}`
+						align='center'
+						width=extraWide ? $.w.extra : $.w.total
+					)
+						tr
+							+tdGutter
+							td(
+								align='left'
+								class=options.tdClasses
+								valign='top'
+								width=$.w.content
+							)
+								// endMSO
+								<!--[if !mso]><!-->
+								div(class=`column ${options.tdClasses}`)
+									<!-- <![endif]-->
+									div(class=options.innerClasses)
+										block
+									<!--[if !mso]><!-->
+								<!-- <![endif]-->
+								// startMSO
+							+tdGutter
+					// endMSO
+					<!--[if !mso]><!-->
+			<!-- <![endif]-->
