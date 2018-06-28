@@ -1,0 +1,86 @@
+include ../helpers/table
+include ../helpers/tdGutter
+include ../helpers/set
+
+mixin twoColumn(options = {})
+	-
+		options.extraWide = options.extraWide || false
+		options.column1 = options.column1 || {}
+		options.column2 = options.column2 || {}
+		options.column1.innerClasses = options.column1.innerClasses || ''
+		options.column1.tdClasses = options.column1.tdClasses || ''
+		options.column2.innerClasses = options.column2.innerClasses || ''
+		options.column2.tdClasses = options.column2.tdClasses || ''
+		options.containerClasses = options.containerClasses || ''
+		options.wrapperClasses = options.wrapperClasses || ''
+	- let columnTwoWidth = null;
+	if options.column1
+		if options.column1.width && !options.extraWide
+			if options.column1.width > $.w.content
+				- throw new Error('+twoColumn: Column width can\'t be greater than content width')
+			- columnTwoWidth = $.w.content - (options.column1.width + $.w.gutterBetween * 2)
+		if options.column1.width && options.extraWide
+			if options.column1.width > $.w.total
+				- throw new Error('+twoColumn: Column width can\'t be greater than total width')
+			- columnTwoWidth = $.w.total - (options.column1.width + $.w.gutterBetween * 2)
+
+	tr
+		td(align='center' class=`responsive ${options.wrapperClasses}` valign='top')
+			<!--[if !mso]><!-->
+			div(class=`container${options.extraWide ? '_extra' : ''} ${options.containerClasses}`)
+				.pseudo_table
+					<!-- <![endif]-->
+					// startMSO
+					+table(
+						class=`responsive ${options.containerClasses}`
+						align='center'
+						width=extraWide ? $.w.extra : $.w.total
+					)
+						tr
+							+tdGutter
+							td(
+								align='left'
+								class=options.column1.tdClasses
+								valign='top'
+								width=options.column1.width ? options.column1.width : $.w.half
+							)
+								// endMSO
+								<!--[if !mso]><!-->
+								div(
+									class=`column ${options.column1.tdClasses}`
+									style=options.column1.width && `width: ${options.column1.width}px`
+								)
+									<!-- <![endif]-->
+									div(class=options.column1.innerClasses)
+										block
+										if blocks.column1
+											- blocks.column1()
+									<!--[if !mso]><!-->
+								<!-- <![endif]-->
+								// startMSO
+							+tdGutter('between')
+							td(
+								align='left'
+								class=options.column2.tdClasses
+								valign='top'
+								width=options.column1.width ? columnTwoWidth : $.w.half
+							)
+								// endMSO
+								<!--[if !mso]><!-->
+								div(
+									class=`column ${options.column2.tdClasses}`
+									style=options.column1.width && `width: ${columnTwoWidth}px`
+								)
+									<!-- <![endif]-->
+									div(class=options.column2.innerClasses)
+										if blocks.column2
+											- blocks.column2()
+									<!--[if !mso]><!-->
+								<!-- <![endif]-->
+								// startMSO
+							+tdGutter
+					// endMSO
+					<!--[if !mso]><!-->
+			<!-- <![endif]-->
+	+set('column1')
+	+set('column2')
