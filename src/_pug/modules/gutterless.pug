@@ -1,0 +1,43 @@
+include ../helpers/table
+
+mixin gutterless(options = {})
+	-
+		options.extraWide = options.extraWide || false
+		options.containerClasses = options.containerClasses || ''
+		options.innerClasses = options.innerClasses || ''
+		options.tdClasses = options.tdClasses || ''
+		options.wrapperClasses = options.wrapperClasses || ''
+
+	tr
+		td(align='center' class=`responsive ${options.wrapperClasses}` valign='top')
+			<!--[if !mso]><!-->
+			div(
+				class=`gutterless container${options.extraWide ? '_extra' : ''}`
+				+ ` ${options.containerClasses}`
+			)
+				.pseudo_table
+					<!-- <![endif]-->
+					// startMSO
+					+table(
+						class=`responsive ${options.containerClasses}`
+						align='center'
+						width=extraWide ? $.w.extra : $.w.total
+					)
+						tr
+							td(
+								align='left'
+								class=`content ${options.tdClasses}`
+								valign='top'
+							)
+								// endMSO
+								<!--[if !mso]><!-->
+								div(class=options.tdClasses)
+									<!-- <![endif]-->
+									div(class=options.innerClasses)
+										block
+									<!--[if !mso]><!-->
+								<!-- <![endif]-->
+								// startMSO
+					// endMSO
+					<!--[if !mso]><!-->
+			<!-- <![endif]-->
