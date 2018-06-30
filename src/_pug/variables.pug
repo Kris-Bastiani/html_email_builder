@@ -3,7 +3,6 @@
 		bodyTableClasses: '',
 		img: {
 			path: 'img/',
-			spacer: 'img/spacer.gif',
 		},
 		preheader: '',
 		subject: '',
@@ -18,6 +17,7 @@
 block variables
 
 -
+	$.img.spacer = `${$.img.path}spacer.gif`
 	$.w.content = $.w.total - $.w.gutter * 2
 	$.w.extra = $.w.total + $.w.gutter * 2
 	$.w.half = ($.w.total - $.w.gutter * 2 - $.w.gutterBetween) / 2
