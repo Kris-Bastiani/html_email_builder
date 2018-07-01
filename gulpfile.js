@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 
 gulp.task('build', ['images', 'inline']);
+gulp.task('clean', require('./lib/tasks/clean'));
 gulp.task('connect', require('./lib/tasks/connect'));
 gulp.task('create', require('./lib/tasks/create'));
 gulp.task('images', require('./lib/tasks/images'));
