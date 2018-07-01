@@ -2,7 +2,7 @@
 	.container_extra {
 		& > div {
 			display: block !important;
-			width: calc(100% - #{($w__gutter * 2) - $w__gutter_between}px);
+			width: ($w__content / $w__total) * 100%;
 		}
 
 		img {
@@ -14,6 +14,7 @@
 
 		.column {
 			display: block !important;
+			width: (($w__total - $w__gutter_between) / $w__total) * 100% !important;
 		}
 	}
 }
@@ -76,17 +77,25 @@
 	.container {
 		& > div {
 			display: block !important;
-			width: calc(100% - #{($w__gutter * 2) - $w__gutter_between}px);
+			width: ($w__content / $w__total) * 100%;
 		}
 	}
 
 	.column {
 		display: block !important;
-		width: calc(100% - #{$w__gutter_between}px) !important;
+		padding-right: $w__gutter / 2 / $w__total * 100% !important;
+		padding-left: $w__gutter / 2 / $w__total * 100% !important;
+		width: (($w__content - $w__gutter_between) / $w__content) * 100% !important;
 	}
 
 	.pseudo_table {
-		width: calc(100% - #{($w__gutter * 2 - $w__gutter_between)}px) !important;
+		width: (($w__total - (2 * $w__gutter - $w__gutter_between)) / $w__total) * 100% !important;
+	}
+
+	.gutterless {
+		.pseudo_table {
+			width: 100% !important;
+		}
 	}
 }
 
@@ -97,14 +106,6 @@
 				width: 100% !important;
 				height: auto !important;
 			}
-		}
-
-		&.gutter {
-			width: 9% !important;
-		}
-
-		&.content {
-			width: 82% !important;
 		}
 	}
 
