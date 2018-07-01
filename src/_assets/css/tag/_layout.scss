@@ -14,6 +14,8 @@
 
 		.column {
 			display: block !important;
+			padding-right: $w__gutter / 2 / $w__extra * 100% !important;
+			padding-left: $w__gutter / 2 / $w__extra * 100% !important;
 			width: (($w__total - $w__gutter_between) / $w__total) * 100% !important;
 		}
 	}
