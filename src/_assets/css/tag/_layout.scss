@@ -25,26 +25,6 @@
 			width: 100% !important;
 			overflow: hidden !important;
 		}
-
-		&.center_med {
-			display: block;
-			float: none;
-			margin: 0 auto !important;
-
-			td {
-				text-align: center !important;
-			}
-
-			img {
-				display: inline-block;
-			}
-		}
-
-		&.txt_center_med {
-			td {
-				text-align: center !important;
-			}
-		}
 	}
 
 	td {
@@ -68,10 +48,6 @@
 			width: 100% !important;
 			height: auto !important;
 		}
-	}
-
-	.hide_med {
-		display: none !important;
 	}
 
 	.container {
@@ -101,11 +77,9 @@
 
 @media only screen and (max-width: 480px) {
 	td {
-		&.img_fluid_sml {
-			img {
-				width: 100% !important;
-				height: auto !important;
-			}
+		.img_fluid_sml {
+			width: 100% !important;
+			height: auto !important;
 		}
 	}
 
