@@ -19,7 +19,7 @@ mixin threeColumn(options = {})
 					+table(
 						class=`responsive ${options.containerClasses}`
 						align='center'
-						width=extraWide ? $.w.extra : $.w.total
+						width=options.extraWide ? $.w.extra : $.w.total
 					)
 						tr
 							+tdGutter
