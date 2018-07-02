@@ -53,6 +53,7 @@ td {
 
 // Minimise extra space around <table> elements added by Outlook 07/10/13
 table {
+	table-layout: fixed;
 	mso-table-lspace: 0pt;
 	mso-table-rspace: 0pt;
 }
