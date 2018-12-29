@@ -29,6 +29,7 @@
 		}
 	}
 
+	th,
 	td {
 		&.responsive_margins {
 			width: 82% !important;
@@ -78,6 +79,7 @@
 }
 
 @media only screen and (max-width: 480px) {
+	th,
 	td {
 		.img_fluid_sml {
 			width: 100% !important;

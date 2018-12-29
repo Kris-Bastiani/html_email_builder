@@ -45,8 +45,9 @@ sup {
 	line-height: 0;
 }
 
-// Prevent extra space added around <table> and <td> elements by some clients
+// Prevent extra space added around <table>, <th> and <td> elements by some clients
 table,
+th,
 td {
 	border-collapse: collapse;
 }
