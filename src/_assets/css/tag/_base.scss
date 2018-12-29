@@ -34,6 +34,18 @@
 			cursor: default;
 		}
 	}
+
+	// Target links created by Samsung Mail
+	#MessageViewBody {
+		a {
+			color: inherit;
+			text-decoration: none;
+			font-size: inherit;
+			font-family: inherit;
+			font-weight: inherit;
+			line-height: inherit;
+		}
+	}
 }
 
 @media only screen and (max-width: #{$w__total}px) {
