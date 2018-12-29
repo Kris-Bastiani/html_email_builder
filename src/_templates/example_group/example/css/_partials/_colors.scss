@@ -1,0 +1,12 @@
+.bg_white {
+	background-color: $clr__white;
+}
+
+.bg_primary {
+	background-color: $clr__primary;
+	color: $clr__white;
+
+	a {
+		color: $clr__white;
+	}
+}

@@ -1,0 +1,19 @@
+body,
+#body_table {
+	background-color: $clr__mono_x_light;
+	color: $clr__black;
+}
+
+body,
+#body_table,
+th,
+td {
+	font: 16px/1.4 $fnt__sans;
+	font-size: 16px;
+	line-height: 1.4 !important;
+	font-family: $fnt__sans;
+}
+
+a {
+	color: $clr__primary;
+}

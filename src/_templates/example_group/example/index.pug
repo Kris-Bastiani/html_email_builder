@@ -1,0 +1,149 @@
+extends /_pug/__layout
+
+block variables
+	-
+		$.subject = 'Example'
+		$.preheader = 'Example preheader text'
+
+block styles
+	if noInline
+		include:scss css/inline.scss
+	include:scss css/_tag.scss
+
+block body
+	// ================================================== ONE COLUMN
+	+oneColumn({ containerClasses: 'txt_sml' })
+		| &nbsp;
+		br
+		| Email not displaying correctly?
+		|
+		a(href='#') View web version
+		br
+		| &nbsp;
+	// ================================================== TWO COLUMN (EXTRA WIDE)
+	+twoColumn({ extraWide: true, containerClasses: 'bg_primary' })
+		+set('column1')
+			| &nbsp;
+			br
+			| Use what happens naturally, don't fight it. That's what makes life fun. That you can make these decisions. That you can create the world that you want. It's a good way of getting rid of all your anxieties and hostilities. Don't kill all your dark areas - you need them to show the light. Trees grow in all kinds of ways. They're not all perfectly straight. Not every limb is perfect. If we're gonna walk though the woods, we need a little path.
+			br
+			br
+			| &nbsp;
+		+set('column2')
+			| &nbsp;
+			br
+			| In your imagination you can go anywhere you want. If you don't like it - change it. It's your world. Everybody needs a friend. You don't have to be crazy to do this but it does help. You better get your coat out, this is going to be a cold painting. I really believe that if you practice enough you could paint the
+			|
+			a(href='#') 'Mona Lisa'
+			|
+			| with a two-inch brush.
+			br
+			br
+			| &nbsp;
+	// ================================================== THREE COLUMN (EXTRA WIDE)
+	+threeColumn({ extraWide: true, containerClasses: 'bg_white' })
+		+set('column1')
+			| &nbsp;
+			br
+			| Nice little clouds playing around in the sky. Look around, look at what we have. Beauty is everywhere, you only have to look to see it. I thought today we would make a happy little stream that's just running through the woods here.
+			br
+			br
+			| &nbsp;
+		+set('column2')
+			| &nbsp;
+			br
+			| Let's go up in here, and start having some fun The only prerequisite is that it makes you happy. If it makes you happy then it's good. All you have to do is let your imagination go wild. The man who does the best job is the one who is happy at his job.
+			br
+			br
+			| &nbsp;
+		+set('column3')
+			| &nbsp;
+			br
+			| You have to allow the paint to break to make it beautiful. That's what painting is all about. It should make you feel good when you paint. Now we can begin working on lots of happy little things.
+			br
+			br
+			| &nbsp;
+	// ================================================== GUTTERLESS
+	+gutterless({ containerClasses: 'bg_white' })
+		a.no_underline(href='#')
+			img.img_fix.img_fluid(alt='Title Image' src='https://satyr.io/1280x16:9/4053E5' width=$.w.total)
+	// ================================================== ONE COLUMN
+	+oneColumn({ containerClasses: 'bg_white' })
+		| &nbsp;
+		br
+		br
+		| Little trees and bushes grow however makes them happy. Let all these little things happen. Don't fight them. Learn to use them. Let your heart take you to wherever you want to be. In nature, dead trees are just as normal as live trees. Let's put some happy little bushes on the other side now.
+		br
+		br
+		a(href='#') Learn when to stop.
+		|
+		| When things happen - enjoy them. They're little gifts. Just let your mind wander and enjoy. This should make you happy.
+		br
+		br
+		| &nbsp;
+	// ================================================== TWO COLUMN
+	+twoColumn({ containerClasses: 'bg_white' })
+		+set('column1')
+			| &nbsp;
+			br
+			| Use what happens naturally, don't fight it. That's what makes life fun. That you can make these decisions. That you can create the world that you want. It's a good way of getting rid of all your anxieties and hostilities. Don't kill all your dark areas - you need them to show the light. Trees grow in all kinds of ways. They're not all perfectly straight. Not every limb is perfect. If we're gonna walk though the woods, we need a little path.
+			br
+			br
+			| &nbsp;
+		+set('column2')
+			| &nbsp;
+			br
+			| In your imagination you can go anywhere you want. If you don't like it - change it. It's your world. Everybody needs a friend. You don't have to be crazy to do this but it does help. You better get your coat out, this is going to be a cold painting. I really believe that if you practice enough you could paint the 'Mona Lisa' with a two-inch brush.
+			br
+			br
+			| &nbsp;
+	// ================================================== TWO COLUMN (UNEVEN)
+	+twoColumn({ containerClasses: 'bg_white', column1: { width: 160 } })
+		+set('column1')
+			| &nbsp;
+			br
+			| We'll take a little bit of Van Dyke Brown. Just make a decision and let it go. Everyone wants to enjoy the good parts - but you have to build the framework first. Use what you see, don't plan it.
+			br
+			br
+			| &nbsp;
+		+set('column2')
+			| &nbsp;
+			br
+			| Only think about one thing at a time. Don't get greedy. Don't kill all your dark areas - you need them to show the light. In this world, everything can be happy. In your world you can create anything you desire. In painting, you have unlimited power. You have the ability to move mountains. You can bend rivers. But when I get home, the only thing I have power over is the garbage.
+			br
+			br
+			| &nbsp;
+	// ================================================== THREE COLUMN
+	+threeColumn({ containerClasses: 'bg_white' })
+		+set('column1')
+			| &nbsp;
+			br
+			| Nice little clouds playing around in the sky. Look around, look at what we have. Beauty is everywhere, you only have to look to see it. I thought today we would make a happy little stream that's just running through the woods here.
+			br
+			br
+			| &nbsp;
+		+set('column2')
+			| &nbsp;
+			br
+			| Let's go up in here, and start having some fun The only prerequisite is that it makes you happy. If it makes you happy then it's good. All you have to do is let your imagination go wild. The man who does the best job is the one who is happy at his job.
+			br
+			br
+			| &nbsp;
+		+set('column3')
+			| &nbsp;
+			br
+			| You have to allow the paint to break to make it beautiful. That's what painting is all about. It should make you feel good when you paint. Now we can begin working on lots of happy little things.
+			br
+			br
+			| &nbsp;
+	// ================================================== ONE COLUMN
+	+oneColumn({ containerClasses: 'txt_sml' })
+		| &nbsp;
+		br
+		br
+		| If you wish to stop receiving these emails, please
+		|
+		a(href='#') unsubscribe
+		br
+		br
+		| &nbsp;
