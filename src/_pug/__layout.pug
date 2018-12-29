@@ -9,7 +9,7 @@ doctype strict
 html(xmlns='http://www.w3.org/1999/xhtml')
 	include modules/head
 	body
-		span#preheader $.preheader
+		span#preheader #{$.preheader}
 		+table(id='body_table' class=$.bodyTableClasses align='center' width='100%')
 			tbody
 				block body
