@@ -48,10 +48,3 @@
 		}
 	}
 }
-
-@media only screen and (max-width: #{$w__total}px) {
-	// Gmail ignores media queries, so this stops .fix_gmail from ruining responsive behaviour
-	.fix_gmail {
-		min-width: inherit !important;
-	}
-}

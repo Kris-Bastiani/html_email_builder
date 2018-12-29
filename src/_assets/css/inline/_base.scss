@@ -87,12 +87,6 @@ table {
 	}
 }
 
-// Force Gmail App to scale email proportionally
-// Ensure at least one content-width <td> has the .fix_gmail class
-.fix_gmail {
-	min-width: #{$w__content}px;
-}
-
 .outlook2013 {
 	font-size: 1px;
 	line-height: 1px;
